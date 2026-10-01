@@ -1,5 +1,5 @@
 {
-  "ran_at": "2026-10-01T22:46:59.982116+00:00",
+  "ran_at": "2026-10-01T23:13:47.320315+00:00",
   "suite": "allview static mirror smoke (no npm smoketest exists)",
   "html_files": 186,
   "http_checks": [
@@ -7,7 +7,7 @@
       "path": "/",
       "status": 200,
       "ok": true,
-      "bytes": 252392,
+      "bytes": 253597,
       "content_type": "text/html",
       "title": "Home - AllView Healthcare",
       "error": null
@@ -16,7 +16,7 @@
       "path": "/about-us/",
       "status": 200,
       "ok": true,
-      "bytes": 230258,
+      "bytes": 230356,
       "content_type": "text/html",
       "title": "About - AllView Healthcare",
       "error": null
@@ -25,7 +25,7 @@
       "path": "/contact/",
       "status": 200,
       "ok": true,
-      "bytes": 243984,
+      "bytes": 247533,
       "content_type": "text/html",
       "title": "Contact - AllView Healthcare",
       "error": null
@@ -34,7 +34,7 @@
       "path": "/dermatology/",
       "status": 200,
       "ok": true,
-      "bytes": 256263,
+      "bytes": 256361,
       "content_type": "text/html",
       "title": "Dermatology - AllView Healthcare",
       "error": null
@@ -43,7 +43,7 @@
       "path": "/appointment-request/",
       "status": 200,
       "ok": true,
-      "bytes": 247558,
+      "bytes": 247656,
       "content_type": "text/html",
       "title": "Appointment Request - AllView Healthcare",
       "error": null
@@ -52,7 +52,7 @@
       "path": "/locations/",
       "status": 200,
       "ok": true,
-      "bytes": 241660,
+      "bytes": 242639,
       "content_type": "text/html",
       "title": "Locations - AllView Healthcare",
       "error": null
@@ -61,7 +61,7 @@
       "path": "/our-team/",
       "status": 200,
       "ok": true,
-      "bytes": 229836,
+      "bytes": 229934,
       "content_type": "text/html",
       "title": "Our Team - AllView Healthcare",
       "error": null
@@ -70,7 +70,7 @@
       "path": "/privacy-policy/",
       "status": 200,
       "ok": true,
-      "bytes": 236729,
+      "bytes": 236827,
       "content_type": "text/html",
       "title": "Privacy Policy - AllView Healthcare",
       "error": null

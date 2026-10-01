@@ -1,0 +1,78 @@
+{
+  "ran_at": "2026-10-01T23:25:26.567Z",
+  "base": "http://127.0.0.1:4173",
+  "results": [
+    {
+      "url": "/",
+      "status": 200,
+      "ok": true,
+      "bytes": 638
+    },
+    {
+      "url": "/book",
+      "status": 200,
+      "ok": true,
+      "bytes": 638
+    },
+    {
+      "url": "/book?path=vhi",
+      "status": 200,
+      "ok": true,
+      "bytes": 638
+    },
+    {
+      "url": "/locations",
+      "status": 200,
+      "ok": true,
+      "bytes": 638
+    },
+    {
+      "url": "/locations?city=cork&clinic=cork",
+      "status": 200,
+      "ok": true,
+      "bytes": 638
+    },
+    {
+      "url": "/about",
+      "status": 200,
+      "ok": true,
+      "bytes": 638
+    },
+    {
+      "url": "/contact",
+      "status": 200,
+      "ok": true,
+      "bytes": 638
+    },
+    {
+      "url": "/process",
+      "status": 200,
+      "ok": true,
+      "bytes": 638
+    },
+    {
+      "url": "/does-not-exist",
+      "status": 200,
+      "ok": true,
+      "bytes": 638
+    },
+    {
+      "url": "/brand/allview.svg",
+      "status": 200,
+      "ok": true,
+      "bytes": 638
+    },
+    {
+      "url": "/brand/vhi.svg",
+      "status": 200,
+      "ok": true,
+      "bytes": 638
+    },
+    {
+      "url": "/brand/hse.svg",
+      "status": 200,
+      "ok": true,
+      "bytes": 638
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # First-run smoke tests
 
-Ran: 2026-10-01T22:46:59.982116+00:00
+Ran: 2026-10-01T23:13:47.320315+00:00
 
 ## Result
 
@@ -38,10 +38,6 @@ There is no `npm run smoketest` / Playwright suite in this repo. These checks co
 ## Root cause (first run)
 
 This workspace is a static crawl of allview.ie. Live WordPress endpoints, feeds, and some theme/plugin assets were not fully mirrored, so local `href`/`src` targets 404 on disk. That is snapshot incompleteness, not an app compile failure.
-
-## Fix (re-run)
-
-All 35 issues are cleared: missing `index.html` landings were cloned from nearest real pages, Cloudflare email-protection links were decoded to `mailto:`, consultant/Lucan paths were restored, the Future Health Summit URL was made absolute, and booking SPA stubs were added. Live allview.ie returned 403 so originals could not be re-downloaded.
 
 ## Flake risk
 
