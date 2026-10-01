@@ -3,7 +3,10 @@ import { Layout } from "./components/Layout";
 import { HomePage } from "./pages/HomePage";
 import { BookPage } from "./pages/BookPage";
 import { LocationsPage } from "./pages/LocationsPage";
-import { AboutPage, ContactPage, NotFoundPage, ProcessPage } from "./pages/InfoPages";
+import { AboutPage } from "./pages/AboutPage";
+import { ContactPage } from "./pages/ContactPage";
+import { NotFoundPage } from "./pages/InfoPages";
+import { ProcessPage } from "./pages/ProcessPage";
 
 export default function App() {
   return (

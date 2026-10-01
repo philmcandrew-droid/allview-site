@@ -132,6 +132,12 @@ export function HomePage() {
               </article>
             ))}
           </div>
+          <Link
+            className="mt-8 inline-flex min-h-12 items-center gap-2 rounded-full bg-navy px-6 font-ui font-semibold text-white transition-colors hover:bg-navy-deep"
+            to="/process"
+          >
+            See how it works in detail <ArrowRight aria-hidden size={18} />
+          </Link>
         </div>
       </section>
     </main>

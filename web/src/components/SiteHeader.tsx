@@ -5,8 +5,8 @@ import { Link, NavLink } from "react-router-dom";
 const links = [
   { to: "/process", label: "How it works" },
   { to: "/locations", label: "Clinics" },
-  { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
+  { to: "/about", label: "About" },
 ];
 
 export function SiteHeader() {

@@ -4,8 +4,8 @@ const footerLinks = [
   { to: "/book", label: "Book" },
   { to: "/locations", label: "Clinics" },
   { to: "/process", label: "How it works" },
-  { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
+  { to: "/about", label: "About" },
 ];
 
 export function SiteFooter() {

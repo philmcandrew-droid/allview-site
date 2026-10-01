@@ -7,9 +7,9 @@
 ---
 
 **Project:** AllView Healthcare
-**Generated:** 2026-10-01 23:55:07
-**Category:** Healthcare App
-**Design Dials:** Variance 4/10 (Balanced / Modern) | Motion 4/10 (Standard) | Density 4/10 (Standard)
+**Generated:** 2026-10-02 00:52:33
+**Category:** Government Portal / Civic Services
+**Design Dials:** Variance 5/10 (Balanced / Modern) | Motion 5/10 (Standard) | Density 4/10 (Standard)
 
 ---
 
@@ -19,18 +19,18 @@
 
 | Role | Hex | CSS Variable |
 |------|-----|--------------|
-| Primary | `#0F766E` | `--color-primary` |
+| Primary | `#0284C7` | `--color-primary` |
 | On Primary | `#FFFFFF` | `--color-on-primary` |
-| Secondary | `#14B8A6` | `--color-secondary` |
-| Accent/CTA | `#0369A1` | `--color-accent` |
-| Background | `#F0FDFA` | `--color-background` |
-| Foreground | `#134E4A` | `--color-foreground` |
-| Muted | `#E8F0F3` | `--color-muted` |
-| Border | `#99F6E4` | `--color-border` |
+| Secondary | `#0EA5E9` | `--color-secondary` |
+| Accent/CTA | `#059669` | `--color-accent` |
+| Background | `#F0F9FF` | `--color-background` |
+| Foreground | `#0F172A` | `--color-foreground` |
+| Muted | `#EFF7FB` | `--color-muted` |
+| Border | `#E0F0F8` | `--color-border` |
 | Destructive | `#DC2626` | `--color-destructive` |
-| Ring | `#0F766E` | `--color-ring` |
+| Ring | `#0284C7` | `--color-ring` |
 
-**Color Notes:** Trust teal + professional blue
+**Color Notes:** Calendar blue + available green
 
 ### Typography
 
@@ -76,7 +76,7 @@
 ```css
 /* Primary Button */
 .btn-primary {
-  background: #0369A1;
+  background: #059669;
   color: white;
   padding: 12px 24px;
   border-radius: 8px;
@@ -93,8 +93,8 @@
 /* Secondary Button */
 .btn-secondary {
   background: transparent;
-  color: #0F766E;
-  border: 2px solid #0F766E;
+  color: #0284C7;
+  border: 2px solid #0284C7;
   padding: 12px 24px;
   border-radius: 8px;
   font-weight: 600;
@@ -107,7 +107,7 @@
 
 ```css
 .card {
-  background: #F0FDFA;
+  background: #F0F9FF;
   border-radius: 12px;
   padding: 24px;
   box-shadow: var(--shadow-md);
@@ -133,9 +133,9 @@
 }
 
 .input:focus {
-  border-color: #0F766E;
+  border-color: #0284C7;
   outline: none;
-  box-shadow: 0 0 0 3px #0F766E20;
+  box-shadow: 0 0 0 3px #0284C720;
 }
 ```
 
@@ -161,13 +161,13 @@
 
 ## Style Guidelines
 
-**Style:** Soft UI Evolution
+**Style:** Conversion-Optimized
 
-**Keywords:** Evolved soft UI, better contrast, modern aesthetics, subtle depth, accessibility-focused, improved shadows, hybrid
+**Keywords:** Form-focused, minimalist design, single CTA focus, high contrast, urgency elements, trust signals, social proof, clear value
 
-**Best For:** Modern enterprise apps, SaaS platforms, health/wellness, modern business tools, professional, hybrid
+**Best For:** E-commerce product pages, free trial signups, lead generation, SaaS pricing pages, limited-time offers
 
-**Key Effects:** Improved shadows (softer than flat, clearer than neumorphism), modern (200-300ms), focus visible, WCAG AA/AAA
+**Key Effects:** Hover states on CTA (color shift, slight scale), form field focus animations, loading spinner, success feedback
 
 ### Page Pattern
 
@@ -197,9 +197,8 @@ const tl = gsap.timeline(); tl.to('.transition-overlay', { yPercent: 0, duration
 
 ## Anti-Patterns (Do NOT Use)
 
-- ❌ Bright neon colors
-- ❌ Motion-heavy animations
-- ❌ AI purple/pink gradients
+- ❌ Flat design without depth
+- ❌ Text-heavy pages
 
 ### Additional Forbidden Patterns
 
