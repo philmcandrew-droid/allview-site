@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-ui: "Figtree", system-ui, sans-serif;
+  --font-body: "Noto Sans", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --color-navy: #002f87;
+  --color-navy-deep: #191383;
+  --color-purple: #7d1690;
+  --color-cyan: #60cbe8;
+  --color-sky: #f0f8ff;
+  --color-paper: #ffffff;
+  --color-vhi: #c40d3c;
+  --color-ink: #002f87;
+  --color-frost: #002f87;
+  --color-muted: #4a5f8a;
+  --color-line: #d5def0;
+  --color-elevated: #ffffff;
+  --color-primary: #002f87;
+  --color-secondary: #60cbe8;
+  --color-accent: #002f87;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  background: var(--color-sky);
+  color: var(--color-navy);
+  font-family: var(--font-body);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.hero-mesh {
+  background: linear-gradient(315deg, #7d1690 0%, #191383 55%, #002f87 100%);
+}
+
+.bento {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 900px) {
+  .bento {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.tile {
+  border: 1px solid var(--color-line);
+  background: #fff;
+  border-radius: 20px;
+  padding: 1.5rem;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+.scrollbar-hide {
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-cyan);
+  outline-offset: 3px;
+}
