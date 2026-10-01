@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2039" height="1012" xml:space="preserve" overflow="hidden">
+  <defs>
+    <linearGradient x1="1014.5" y1="0" x2="1014.5" y2="1006" gradientUnits="userSpaceOnUse" spreadMethod="reflect" id="fill0">
+      <stop offset="0" stop-color="#F6F8FC" stop-opacity="1"></stop>
+      <stop offset="0.74" stop-color="#ABC0E4" stop-opacity="1"></stop>
+      <stop offset="0.83" stop-color="#ABC0E4" stop-opacity="1"></stop>
+      <stop offset="1" stop-color="#C7D5ED" stop-opacity="1"></stop>
+    </linearGradient>
+  </defs>
+  <g transform="translate(4 4)">
+    <g>
+      <rect x="0" y="0" width="2029" height="1006" fill="url(#fill0)"></rect>
+      <g>
+        <path d="M222.5 805.527 1978.5 805.527M222.5 710.523 1978.5 710.523M222.5 616.52 1978.5 616.52M222.5 522.517 1978.5 522.517M222.5 427.514 1978.5 427.514M222.5 333.511 1978.5 333.511M222.5 239.508 1978.5 239.508M222.5 144.505 1978.5 144.505M222.5 50.5 1978.5 50.5" stroke="#D9D9D9" stroke-width="3.4375" stroke-linecap="butt" stroke-linejoin="round" stroke-miterlimit="10" stroke-opacity="1" fill="none" fill-rule="nonzero"></path>
+      </g>
+      <g>
+        <path d="M269.009 602.02 311.01 602.02 311.01 900 269.009 900ZM404.013 595.02 446.015 595.02 446.015 900 404.013 900ZM539.018 588.019 581.019 588.019 581.019 900 539.018 900ZM674.022 559.018 716.023 559.018 716.023 900 674.022 900ZM809.027 552.018 851.028 552.018 851.028 900 809.027 900ZM944.031 537.018 986.032 537.018 986.032 900 944.031 900ZM1079.04 519.017 1121.04 519.017 1121.04 900 1079.04 900ZM1214.04 509.017 1256.04 509.017 1256.04 900 1214.04 900ZM1349.04 488.016 1392.05 488.016 1392.05 900 1349.04 900ZM1484.05 458.015 1527.05 458.015 1527.05 900 1484.05 900ZM1619.05 394.013 1662.05 394.013 1662.05 900 1619.05 900ZM1754.06 298.01 1797.06 298.01 1797.06 900 1754.06 900ZM1889.06 167.005 1932.06 167.005 1932.06 900 1889.06 900Z" fill="#4472C4" fill-rule="nonzero" fill-opacity="1"></path>
+      </g>
+      <g>
+        <path d="M222.5 899.5 1978.5 899.5" stroke="#D9D9D9" stroke-width="3.4375" stroke-linecap="butt" stroke-linejoin="round" stroke-miterlimit="10" stroke-opacity="1" fill="none" fill-rule="evenodd"></path>
+      </g>
+      <g>
+        <text fill="#595959" fill-opacity="1" font-family="Calibri,Calibri_MSFontService,sans-serif" font-style="normal" font-variant="normal" font-weight="400" font-stretch="normal" font-size="41" text-anchor="start" direction="ltr" writing-mode="lr-tb" text-decoration="none" transform="matrix(1 0 0 1 134.2 910)"> -</text>
+      </g>
+      <g>
+        <text fill="#595959" fill-opacity="1" font-family="Calibri,Calibri_MSFontService,sans-serif" font-style="normal" font-variant="normal" font-weight="400" font-stretch="normal" font-size="41" text-anchor="start" direction="ltr" writing-mode="lr-tb" text-decoration="none" transform="matrix(1 0 0 1 29.7917 815)"> 100,000</text>
+      </g>
+      <g>
+        <text fill="#595959" fill-opacity="1" font-family="Calibri,Calibri_MSFontService,sans-serif" font-style="normal" font-variant="normal" font-weight="400" font-stretch="normal" font-size="41" text-anchor="start" direction="ltr" writing-mode="lr-tb" text-decoration="none" transform="matrix(1 0 0 1 29.7917 721)"> 200,000</text>
+      </g>
+      <g>
+        <text fill="#595959" fill-opacity="1" font-family="Calibri,Calibri_MSFontService,sans-serif" font-style="normal" font-variant="normal" font-weight="400" font-stretch="normal" font-size="41" text-anchor="start" direction="ltr" writing-mode="lr-tb" text-decoration="none" transform="matrix(1 0 0 1 29.7917 627)"> 300,000</text>
+      </g>
+      <g>
+        <text fill="#595959" fill-opacity="1" font-family="Calibri,Calibri_MSFontService,sans-serif" font-style="normal" font-variant="normal" font-weight="400" font-stretch="normal" font-size="41" text-anchor="start" direction="ltr" writing-mode="lr-tb" text-decoration="none" transform="matrix(1 0 0 1 29.7917 532)"> 400,000</text>
+      </g>
+      <g>
+        <text fill="#595959" fill-opacity="1" font-family="Calibri,Calibri_MSFontService,sans-serif" font-style="normal" font-variant="normal" font-weight="400" font-stretch="normal" font-size="41" text-anchor="start" direction="ltr" writing-mode="lr-tb" text-decoration="none" transform="matrix(1 0 0 1 29.7917 438)"> 500,000</text>
+      </g>
+      <g>
+        <text fill="#595959" fill-opacity="1" font-family="Calibri,Calibri_MSFontService,sans-serif" font-style="normal" font-variant="normal" font-weight="400" font-stretch="normal" font-size="41" text-anchor="start" direction="ltr" writing-mode="lr-tb" text-decoration="none" transform="matrix(1 0 0 1 29.7917 344)"> 600,000</text>
+      </g>
+      <g>
+        <text fill="#595959" fill-opacity="1" font-family="Calibri,Calibri_MSFontService,sans-serif" font-style="normal" font-variant="normal" font-weight="400" font-stretch="normal" font-size="41" text-anchor="start" direction="ltr" writing-mode="lr-tb" text-decoration="none" transform="matrix(1 0 0 1 29.7917 249)"> 700,000</text>
+      </g>
+      <g>
+        <text fill="#595959" fill-opacity="1" font-family="Calibri,Calibri_MSFontService,sans-serif" font-style="normal" font-variant="normal" font-weight="400" font-stretch="normal" font-size="41" text-anchor="start" direction="ltr" writing-mode="lr-tb" text-decoration="none" transform="matrix(1 0 0 1 29.7917 155)"> 800,000</text>
+      </g>
+      <g>
+        <text fill="#595959" fill-opacity="1" font-family="Calibri,Calibri_MSFontService,sans-serif" font-style="normal" font-variant="normal" font-weight="400" font-stretch="normal" font-size="41" text-anchor="start" direction="ltr" writing-mode="lr-tb" text-decoration="none" transform="matrix(1 0 0 1 29.7917 60)"> 900,000</text>
+      </g>
+      <g>
+        <text fill="#595959" fill-opacity="1" font-family="Calibri,Calibri_MSFontService,sans-serif" font-style="normal" font-variant="normal" font-weight="400" font-stretch="normal" font-size="41" text-anchor="start" direction="ltr" writing-mode="lr-tb" text-decoration="none" transform="matrix(1 0 0 1 248.132 965)">1961</text>
+      </g>
+      <g>
+        <text fill="#595959" fill-opacity="1" font-family="Calibri,Calibri_MSFontService,sans-serif" font-style="normal" font-variant="normal" font-weight="400" font-stretch="normal" font-size="41" text-anchor="start" direction="ltr" writing-mode="lr-tb" text-decoration="none" transform="matrix(1 0 0 1 383.191 965)">1966</text>
+      </g>
+      <g>
+        <text fill="#595959" fill-opacity="1" font-family="Calibri,Calibri_MSFontService,sans-serif" font-style="normal" font-variant="normal" font-weight="400" font-stretch="normal" font-size="41" text-anchor="start" direction="ltr" writing-mode="lr-tb" text-decoration="none" transform="matrix(1 0 0 1 518.25 965)">1971</text>
+      </g>
+      <g>
+        <text fill="#595959" fill-opacity="1" font-family="Calibri,Calibri_MSFontService,sans-serif" font-style="normal" font-variant="normal" font-weight="400" font-stretch="normal" font-size="41" text-anchor="start" direction="ltr" writing-mode="lr-tb" text-decoration="none" transform="matrix(1 0 0 1 653.308 965)">1979</text>
+      </g>
+      <g>
+        <text fill="#595959" fill-opacity="1" font-family="Calibri,Calibri_MSFontService,sans-serif" font-style="normal" font-variant="normal" font-weight="400" font-stretch="normal" font-size="41" text-anchor="start" direction="ltr" writing-mode="lr-tb" text-decoration="none" transform="matrix(1 0 0 1 788.367 965)">1981</text>
+      </g>
+      <g>
+        <text fill="#595959" fill-opacity="1" font-family="Calibri,Calibri_MSFontService,sans-serif" font-style="normal" font-variant="normal" font-weight="400" font-stretch="normal" font-size="41" text-anchor="start" direction="ltr" writing-mode="lr-tb" text-decoration="none" transform="matrix(1 0 0 1 923.426 965)">1986</text>
+      </g>
+      <g>
+        <text fill="#595959" fill-opacity="1" font-family="Calibri,Calibri_MSFontService,sans-serif" font-style="normal" font-variant="normal" font-weight="400" font-stretch="normal" font-size="41" text-anchor="start" direction="ltr" writing-mode="lr-tb" text-decoration="none" transform="matrix(1 0 0 1 1058.48 965)">1991</text>
+      </g>
+      <g>
+        <text fill="#595959" fill-opacity="1" font-family="Calibri,Calibri_MSFontService,sans-serif" font-style="normal" font-variant="normal" font-weight="400" font-stretch="normal" font-size="41" text-anchor="start" direction="ltr" writing-mode="lr-tb" text-decoration="none" transform="matrix(1 0 0 1 1193.54 965)">1996</text>
+      </g>
+      <g>
+        <text fill="#595959" fill-opacity="1" font-family="Calibri,Calibri_MSFontService,sans-serif" font-style="normal" font-variant="normal" font-weight="400" font-stretch="normal" font-size="41" text-anchor="start" direction="ltr" writing-mode="lr-tb" text-decoration="none" transform="matrix(1 0 0 1 1328.6 965)">2002</text>
+      </g>
+      <g>
+        <text fill="#595959" fill-opacity="1" font-family="Calibri,Calibri_MSFontService,sans-serif" font-style="normal" font-variant="normal" font-weight="400" font-stretch="normal" font-size="41" text-anchor="start" direction="ltr" writing-mode="lr-tb" text-decoration="none" transform="matrix(1 0 0 1 1463.66 965)">2006</text>
+      </g>
+      <g>
+        <text fill="#595959" fill-opacity="1" font-family="Calibri,Calibri_MSFontService,sans-serif" font-style="normal" font-variant="normal" font-weight="400" font-stretch="normal" font-size="41" text-anchor="start" direction="ltr" writing-mode="lr-tb" text-decoration="none" transform="matrix(1 0 0 1 1598.72 965)">2011</text>
+      </g>
+      <g>
+        <text fill="#595959" fill-opacity="1" font-family="Calibri,Calibri_MSFontService,sans-serif" font-style="normal" font-variant="normal" font-weight="400" font-stretch="normal" font-size="41" text-anchor="start" direction="ltr" writing-mode="lr-tb" text-decoration="none" transform="matrix(1 0 0 1 1733.78 965)">2016</text>
+      </g>
+      <g>
+        <text fill="#595959" fill-opacity="1" font-family="Calibri,Calibri_MSFontService,sans-serif" font-style="normal" font-variant="normal" font-weight="400" font-stretch="normal" font-size="41" text-anchor="start" direction="ltr" writing-mode="lr-tb" text-decoration="none" transform="matrix(1 0 0 1 1868.84 965)">2022</text>
+      </g>
+      <rect x="0.499836" y="0.499836" width="2029" height="1006" stroke="#D9D9D9" stroke-width="3.4375" stroke-linecap="butt" stroke-linejoin="round" stroke-miterlimit="10" stroke-opacity="1" fill="none"></rect>
+    </g>
+  </g>
+</svg>

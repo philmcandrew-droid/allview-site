@@ -1,0 +1,83 @@
+{
+  "ran_at": "2026-10-01T22:46:59.982116+00:00",
+  "suite": "allview static mirror smoke (no npm smoketest exists)",
+  "html_files": 186,
+  "http_checks": [
+    {
+      "path": "/",
+      "status": 200,
+      "ok": true,
+      "bytes": 252392,
+      "content_type": "text/html",
+      "title": "Home - AllView Healthcare",
+      "error": null
+    },
+    {
+      "path": "/about-us/",
+      "status": 200,
+      "ok": true,
+      "bytes": 230258,
+      "content_type": "text/html",
+      "title": "About - AllView Healthcare",
+      "error": null
+    },
+    {
+      "path": "/contact/",
+      "status": 200,
+      "ok": true,
+      "bytes": 243984,
+      "content_type": "text/html",
+      "title": "Contact - AllView Healthcare",
+      "error": null
+    },
+    {
+      "path": "/dermatology/",
+      "status": 200,
+      "ok": true,
+      "bytes": 256263,
+      "content_type": "text/html",
+      "title": "Dermatology - AllView Healthcare",
+      "error": null
+    },
+    {
+      "path": "/appointment-request/",
+      "status": 200,
+      "ok": true,
+      "bytes": 247558,
+      "content_type": "text/html",
+      "title": "Appointment Request - AllView Healthcare",
+      "error": null
+    },
+    {
+      "path": "/locations/",
+      "status": 200,
+      "ok": true,
+      "bytes": 241660,
+      "content_type": "text/html",
+      "title": "Locations - AllView Healthcare",
+      "error": null
+    },
+    {
+      "path": "/our-team/",
+      "status": 200,
+      "ok": true,
+      "bytes": 229836,
+      "content_type": "text/html",
+      "title": "Our Team - AllView Healthcare",
+      "error": null
+    },
+    {
+      "path": "/privacy-policy/",
+      "status": 200,
+      "ok": true,
+      "bytes": 236729,
+      "content_type": "text/html",
+      "title": "Privacy Policy - AllView Healthcare",
+      "error": null
+    }
+  ],
+  "issue_count": 0,
+  "by_type": {},
+  "missing_local_unique": [],
+  "note": "This repo is a WordPress static snapshot, not a Node Playwright app. npm run smoketest is not present."
+}

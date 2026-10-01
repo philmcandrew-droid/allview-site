@@ -1,0 +1,1 @@
+document.getElementById('root')?.insertAdjacentHTML('beforeend','<p style="padding:2rem;font-family:sans-serif">AllView booking is unavailable in this static mirror. Use the Contact or Appointment Request pages.</p>');
