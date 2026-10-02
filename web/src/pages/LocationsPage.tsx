@@ -11,6 +11,7 @@ import {
 } from "@phosphor-icons/react";
 import { useMemo, useRef, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
+import { IrelandMap } from "../components/IrelandMap";
 import {
   cities,
   clinics,
@@ -20,6 +21,7 @@ import {
   type City,
   type Clinic,
 } from "../data/clinics";
+import { rankClinics } from "../domain/nearest-clinic";
 
 type CityFilter = City | "all";
 type Coords = { lat: number; lng: number };
@@ -40,6 +42,17 @@ function formatKm(km: number): string {
   return km < 10 ? `${km.toFixed(1)} km` : `${Math.round(km)} km`;
 }
 
+function ClinicPhoto({ clinic, className }: { clinic: Clinic; className: string }) {
+  if (!clinic.photo) {
+    return (
+      <div aria-hidden="true" className={`grid place-items-center bg-navy p-2 text-center text-white ${className}`}>
+        <p className="font-ui text-xs font-semibold leading-tight">{clinic.city}</p>
+      </div>
+    );
+  }
+  return <img alt="" aria-hidden="true" className={`object-cover ${className}`} loading="lazy" src={clinic.photo} />;
+}
+
 export function LocationsPage() {
   const [params, setParams] = useSearchParams();
   const city = parseCity(params.get("city"));
@@ -51,10 +64,7 @@ export function LocationsPage() {
   const visible = useMemo(() => {
     const list = city === "all" ? clinics : clinics.filter((c) => c.city === city);
     if (!coords) return list;
-    return [...list].sort(
-      (a, b) =>
-        distanceKm(coords.lat, coords.lng, a.lat, a.lng) - distanceKm(coords.lat, coords.lng, b.lat, b.lng),
-    );
+    return rankClinics(coords.lat, coords.lng, list);
   }, [city, coords]);
 
   const requested = params.get("clinic");
@@ -69,8 +79,9 @@ export function LocationsPage() {
     setParams(nextParams, { replace: true });
   }
 
-  function select(clinic: Clinic) {
+  function select(clinic: Clinic, matchCounty = false) {
     const nextParams = new URLSearchParams(params);
+    if (matchCounty) nextParams.set("city", clinic.city.toLowerCase());
     nextParams.set("clinic", clinic.id);
     setParams(nextParams, { replace: true });
     // On phones the map/details sit above the list, so bring them back into view.
@@ -117,8 +128,22 @@ export function LocationsPage() {
     <main id="main" tabIndex={-1} className="mx-auto max-w-6xl px-5 pb-32 pt-10 outline-none lg:pb-16 lg:pt-16">
       <h1 className="font-display text-4xl text-navy">Find a clinic</h1>
       <p className="mt-3 max-w-xl text-muted">
-        Six clinics across Ireland. Pick a county or use your location — then call or get directions in one tap.
+        Six clinics across Ireland. Pick a county on the map or use your location — then call or get directions in one
+        tap.
       </p>
+
+      <div className="mt-8">
+        <IrelandMap
+          activeCity={city}
+          selectedCity={selected.city}
+          selectedClinicId={selected.id}
+          onCity={setCity}
+          onClinic={(id) => {
+            const clinic = clinics.find((item) => item.id === id);
+            if (clinic) select(clinic, true);
+          }}
+        />
+      </div>
 
       <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div
@@ -169,6 +194,20 @@ export function LocationsPage() {
           aria-label="Selected clinic"
         >
           <div className="overflow-hidden rounded-2xl border border-line bg-paper shadow-md">
+            {selected.photo ? (
+              <img
+                alt={`Photograph of ${selected.name}`}
+                className="aspect-[16/9] w-full object-cover"
+                src={selected.photo}
+              />
+            ) : (
+              <div className="flex aspect-[16/9] items-end bg-navy p-5 text-white">
+                <div>
+                  <p className="font-mono text-xs uppercase tracking-[0.16em] text-cyan">{selected.city}</p>
+                  <p className="mt-1 font-ui text-xl font-semibold">{selected.building}</p>
+                </div>
+              </div>
+            )}
             <iframe
               key={selected.id}
               allowFullScreen
@@ -263,7 +302,10 @@ export function LocationsPage() {
                     type="button"
                     onClick={() => select(clinic)}
                   >
-                    <div className="flex items-start justify-between gap-3">
+                    <div className="flex items-start gap-3">
+                      <ClinicPhoto clinic={clinic} className="h-20 w-24 shrink-0 rounded-xl" />
+                      <div className="min-w-0 flex-1">
+                      <div className="flex items-start justify-between gap-3">
                       <div className="min-w-0">
                         <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted">{clinic.city}</p>
                         <h3 className="mt-1 font-ui text-lg font-semibold text-navy">{clinic.name}</h3>
@@ -276,6 +318,8 @@ export function LocationsPage() {
                     <p className="mt-3 inline-flex items-center gap-1 font-ui text-sm font-semibold text-navy">
                       <MapPin aria-hidden size={16} /> {active ? "Shown on map" : "Show on map"}
                     </p>
+                      </div>
+                    </div>
                   </button>
                 </li>
               );

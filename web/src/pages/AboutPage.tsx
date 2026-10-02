@@ -1,16 +1,10 @@
-import {
-  ArrowRight,
-  Buildings,
-  Certificate,
-  FirstAid,
-  Handshake,
-  Hospital,
-  ShieldCheck,
-  Timer,
-} from "@phosphor-icons/react";
+import { ArrowRight, FirstAid, Handshake, ShieldCheck, Timer } from "@phosphor-icons/react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { awardYears, awards, chapters, type ChapterId } from "../data/about";
+import { chapters, type ChapterId } from "../data/about";
+import { AwardsGallery } from "../components/AwardsGallery";
+import { SectionGallery } from "../components/SectionGallery";
+import { sectionMedia } from "../data/section-media";
 
 const chapterIcons = {
   wait: Timer,
@@ -21,17 +15,16 @@ const chapterIcons = {
 
 export function AboutPage() {
   const [chapterId, setChapterId] = useState<ChapterId>("wait");
-  const [year, setYear] = useState<(typeof awardYears)[number] | "all">("all");
   const chapter = chapters.find((item) => item.id === chapterId) ?? chapters[0];
   const ChapterIcon = chapterIcons[chapter.id];
-  const visibleAwards = year === "all" ? awards : awards.filter((item) => item.year === year);
+  const charts = sectionMedia["/about-us"] ?? [];
 
   return (
     <main id="main" tabIndex={-1} className="outline-none">
       <section className="hero-mesh px-5 pb-16 pt-14 text-white sm:pt-20">
         <div className="mx-auto max-w-6xl">
           <p className="font-mono text-xs uppercase tracking-[0.22em] text-cyan">About AllView</p>
-          <h1 className="mt-4 max-w-3xl font-display text-4xl leading-[1.05] font-black sm:text-6xl">
+          <h1 className="mt-4 max-w-3xl font-ui text-4xl leading-[1.05] font-semibold sm:text-6xl">
             Ireland’s fastest route to a consultant dermatologist.
           </h1>
           <p className="mt-5 max-w-xl text-lg text-white/90">
@@ -106,6 +99,12 @@ export function AboutPage() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-6xl px-5 pt-16">
+        {charts.map((block) => (
+          <SectionGallery block={block} key={block.title} />
+        ))}
+      </section>
+
       <section className="mx-auto max-w-6xl px-5 py-16" aria-label="Key clients">
         <p className="font-ui text-sm font-semibold text-muted">Key clients</p>
         <h2 className="mt-2 font-display text-3xl text-navy">Who we work for</h2>
@@ -137,55 +136,37 @@ export function AboutPage() {
       <section className="bg-paper px-5 py-16" aria-labelledby="awards-heading">
         <div className="mx-auto max-w-6xl">
           <h2 id="awards-heading" className="font-display text-3xl text-navy">
-            Awards we share with hospitals
+            Awards and accolades
           </h2>
-          <p className="mt-3 max-w-xl text-muted">Tap a year. The work is done with Beaumont, St James’s and others — not in isolation.</p>
-          <div className="mt-6 flex flex-wrap gap-2" role="group" aria-label="Filter awards by year">
-            {(["all", ...awardYears] as const).map((option) => {
-              const active = year === option;
-              return (
-                <button
-                  key={option}
-                  aria-pressed={active}
-                  className={`min-h-11 rounded-full border px-4 font-ui text-sm font-semibold transition-colors ${
-                    active ? "border-navy bg-navy text-white" : "border-line bg-paper text-navy hover:border-navy"
-                  }`}
-                  type="button"
-                  onClick={() => setYear(option)}
-                >
-                  {option === "all" ? "All years" : option}
-                </button>
-              );
-            })}
+          <p className="mt-3 max-w-2xl text-muted">
+            Recognised with the hospitals we work with — Beaumont, St James’s and others. These are the awards
+            published on AllView’s awards page.
+          </p>
+          <div className="mt-8">
+            <AwardsGallery />
           </div>
-          <ul className="mt-8 grid gap-4 md:grid-cols-2">
-            {visibleAwards.map((award) => (
-              <li className="tile" key={`${award.year}-${award.title}`}>
-                <p className="font-mono text-xs uppercase tracking-wider text-cyan">{award.year}</p>
-                <h3 className="mt-2 font-ui text-lg font-semibold text-navy">{award.title}</h3>
-                <p className="mt-2 text-sm text-muted">{award.detail}</p>
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-5 py-16" aria-label="Standards">
         <div className="grid gap-4 md:grid-cols-3">
           <article className="tile">
-            <Certificate aria-hidden className="text-navy" size={28} />
+            <div className="flex items-center gap-3">
+              <img alt="ISO 9001" className="h-16 w-16 object-contain" src="/media/iso-9001.jpg" />
+              <img alt="ISO 27001" className="h-16 w-16 object-contain" src="/media/iso-27001.jpg" />
+            </div>
             <h2 className="mt-3 font-ui text-lg font-semibold text-navy">ISO 9001 &amp; 27001</h2>
             <p className="mt-2 text-sm text-muted">Quality management and information security, independently certified.</p>
           </article>
           <article className="tile">
-            <Hospital aria-hidden className="text-navy" size={28} />
+            <img alt="CHKS accreditation" className="h-16 w-auto object-contain" src="/media/chks.webp" />
             <h2 className="mt-3 font-ui text-lg font-semibold text-navy">Clinical governance</h2>
             <p className="mt-2 text-sm text-muted">
               MDT meetings, audits and risk reviews report to the Clinician Governance and Safety Committee.
             </p>
           </article>
           <article className="tile">
-            <Buildings aria-hidden className="text-navy" size={28} />
+            <img alt="DermView" className="h-10 w-auto" src="/media/DermView-Logo.svg" />
             <h2 className="mt-3 font-ui text-lg font-semibold text-navy">DermView Limited</h2>
             <p className="mt-2 text-sm text-muted">Trading as AllView Healthcare. Head office in Carrickmines, Dublin 18.</p>
           </article>
@@ -197,7 +178,7 @@ export function AboutPage() {
           <div>
             <p className="font-mono text-xs uppercase tracking-[0.22em] text-cyan">Next</p>
             <h2 className="mt-2 font-display text-3xl">Meet us as a patient, not a brochure.</h2>
-            <p className="mt-2 text-white/80">Play the five-step visit, or request a call back now.</p>
+            <p className="mt-2 text-white/80">See the five steps, or request a call back now.</p>
           </div>
           <div className="flex flex-wrap gap-3">
             <Link

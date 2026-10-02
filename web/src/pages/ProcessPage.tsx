@@ -112,12 +112,12 @@ export function ProcessPage() {
       <section className="hero-mesh px-5 pb-16 pt-14 text-white sm:pt-20">
         <div className="mx-auto max-w-6xl">
           <p className="font-mono text-xs uppercase tracking-[0.22em] text-cyan">How it works</p>
-          <h1 className="mt-4 max-w-3xl font-display text-4xl leading-[1.05] font-black sm:text-6xl">
-            Play the visit. Then book it.
+          <h1 className="mt-4 max-w-3xl font-ui text-4xl leading-[1.05] font-semibold sm:text-6xl">
+            Here’s what happens at your appointment.
           </h1>
           <p className="mt-5 max-w-xl text-lg text-white/90">
-            Five short scenes — from the phone call to your result. Choose who this is for and the page
-            adapts: wait, cost, and what happens first.
+            We’ll walk you through each step — from the first call to your result. Choose how you are
+            covered and the wait, cost, and first step update.
           </p>
 
           <div
@@ -165,7 +165,7 @@ export function ProcessPage() {
         </div>
       </section>
 
-      <section className="relative z-10 mx-auto -mt-8 max-w-6xl px-5" aria-label="Interactive visit">
+      <section className="relative z-10 mx-auto -mt-8 max-w-6xl px-5" aria-label="How a visit works">
         <VisitPlayer path={profile} />
         <p className="mt-4 text-center">
           <a className="inline-flex min-h-11 items-center font-ui text-sm font-semibold text-navy underline decoration-cyan decoration-2 underline-offset-4" href="#questions">
@@ -275,7 +275,7 @@ export function ProcessPage() {
       <section className="px-5 pb-20">
         <div className="mx-auto flex max-w-6xl flex-col items-start gap-6 rounded-3xl bg-navy p-8 text-white sm:flex-row sm:items-center sm:justify-between sm:p-10">
           <div>
-            <p className="font-mono text-xs uppercase tracking-[0.22em] text-cyan">You’ve seen the visit</p>
+            <p className="font-mono text-xs uppercase tracking-[0.22em] text-cyan">That’s the process</p>
             <h2 className="mt-2 font-display text-3xl">Start as a {profile.short}.</h2>
             <p className="mt-2 text-white/80">Request a call back, or ring {profile.phoneLabel} — Mon–Fri, 9am–5pm.</p>
           </div>

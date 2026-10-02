@@ -2,6 +2,7 @@ import { ArrowRight, CheckCircle, Phone, ShieldCheck, Stethoscope, Timer } from 
 import { useMemo, useState, type FormEvent } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { parsePath, pathOrder, profiles, type Path } from "../data/process";
+import { validateCallbackRequest } from "../domain/callback-request";
 
 const pathVisual: Record<Path, { wait: string; include: string[] }> = {
   vhi: {
@@ -23,17 +24,32 @@ export function BookPage() {
   const path = useMemo(() => parsePath(params.get("path")), [params]);
   const [sent, setSent] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [errors, setErrors] = useState<Record<string, string>>({});
   const profile = profiles[path];
   const visual = pathVisual[path];
 
   function setPath(next: Path) {
     setParams({ path: next }, { replace: true });
     setSent(false);
+    setErrors({});
   }
 
   function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (submitting) return;
+    const data = new FormData(event.currentTarget);
+    const result = validateCallbackRequest({
+      name: String(data.get("name") ?? ""),
+      phone: String(data.get("phone") ?? ""),
+      email: String(data.get("email") ?? ""),
+      path,
+      referrer: String(data.get("referrer") ?? ""),
+    });
+    if (!result.ok) {
+      setErrors(result.errors);
+      return;
+    }
+    setErrors({});
     setSubmitting(true);
     window.setTimeout(() => {
       setSubmitting(false);
@@ -46,7 +62,7 @@ export function BookPage() {
       <section className="hero-mesh px-5 pb-16 pt-14 text-white sm:pt-20">
         <div className="mx-auto max-w-6xl">
           <p className="font-mono text-xs uppercase tracking-[0.22em] text-cyan">Book a visit</p>
-          <h1 className="mt-4 max-w-3xl font-display text-4xl leading-[1.05] font-black sm:text-6xl">
+          <h1 className="mt-4 max-w-3xl font-ui text-4xl leading-[1.05] font-semibold sm:text-6xl">
             We’ll call you back and book the nearest clinic.
           </h1>
           <p className="mt-5 max-w-xl text-lg text-white/90">
@@ -127,36 +143,54 @@ export function BookPage() {
                 <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted">Step 2 of 2</p>
                 <h2 className="mt-2 font-display text-3xl text-navy">Your details</h2>
                 <p className="mt-2 text-muted">{profile.bookStep}</p>
-                <form className="mt-8 grid gap-4" onSubmit={onSubmit}>
+                <form className="mt-8 grid gap-4" noValidate onSubmit={onSubmit}>
                   <label className="grid gap-1 text-sm font-semibold text-navy">
                     Full name *
                     <input
-                      required
+                      aria-describedby={errors.name ? "book-name-error" : undefined}
+                      aria-invalid={errors.name ? true : undefined}
                       autoComplete="name"
                       className="min-h-12 rounded-xl border border-line bg-sky px-4 font-normal"
                       name="name"
                       type="text"
                     />
+                    {errors.name ? (
+                      <span className="font-normal text-vhi" id="book-name-error" role="alert">
+                        {errors.name}
+                      </span>
+                    ) : null}
                   </label>
                   <label className="grid gap-1 text-sm font-semibold text-navy">
                     Phone *
                     <input
-                      required
+                      aria-describedby={errors.phone ? "book-phone-error" : undefined}
+                      aria-invalid={errors.phone ? true : undefined}
                       autoComplete="tel"
                       className="min-h-12 rounded-xl border border-line bg-sky px-4 font-normal"
                       name="phone"
                       type="tel"
                     />
+                    {errors.phone ? (
+                      <span className="font-normal text-vhi" id="book-phone-error" role="alert">
+                        {errors.phone}
+                      </span>
+                    ) : null}
                   </label>
                   <label className="grid gap-1 text-sm font-semibold text-navy">
                     Email *
                     <input
-                      required
+                      aria-describedby={errors.email ? "book-email-error" : undefined}
+                      aria-invalid={errors.email ? true : undefined}
                       autoComplete="email"
                       className="min-h-12 rounded-xl border border-line bg-sky px-4 font-normal"
                       name="email"
                       type="email"
                     />
+                    {errors.email ? (
+                      <span className="font-normal text-vhi" id="book-email-error" role="alert">
+                        {errors.email}
+                      </span>
+                    ) : null}
                   </label>
                   {path === "hse" ? (
                     <label className="grid gap-1 text-sm font-semibold text-navy">
@@ -225,9 +259,9 @@ export function BookPage() {
               </a>
             </div>
             <p className="px-1 text-sm text-muted">
-              Prefer to see the visit first?{" "}
+              Want to see the steps first?{" "}
               <Link className="font-semibold text-navy underline decoration-cyan decoration-2 underline-offset-4" to={`/process?path=${path}`}>
-                Play how it works
+                How it works
               </Link>
               .
             </p>

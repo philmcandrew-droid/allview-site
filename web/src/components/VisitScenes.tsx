@@ -17,12 +17,12 @@ export function SceneBook({ title }: SceneProps) {
       <circle cx="170" cy="126" fill="#60cbe8" r="4" />
       <rect fill="#ffffff" height="10" rx="5" width="72" x="134" y="168" />
       <rect fill="#60cbe8" height="10" rx="5" width="48" x="146" y="190" />
-      <text fill="#ffffff" fontFamily="Figtree, sans-serif" fontSize="13" fontWeight="600" textAnchor="middle" x="170" y="232">
+      <text fill="#ffffff" fontFamily="Poppins, sans-serif" fontSize="13" fontWeight="600" textAnchor="middle" x="170" y="232">
         01 224 8100
       </text>
       <rect fill="#ffffff" height="168" rx="18" stroke="#d5def0" strokeWidth="2" width="200" x="340" y="116" />
       <rect fill="#002f87" height="36" rx="18" width="200" x="340" y="116" />
-      <text fill="#ffffff" fontFamily="Figtree, sans-serif" fontSize="14" fontWeight="600" textAnchor="middle" x="440" y="139">
+      <text fill="#ffffff" fontFamily="Poppins, sans-serif" fontSize="14" fontWeight="600" textAnchor="middle" x="440" y="139">
         This week
       </text>
       {[0, 1, 2, 3, 4].map((col) =>
@@ -87,18 +87,18 @@ export function SceneResults({ title }: SceneProps) {
       <rect fill="#60cbe8" height="44" rx="10" width="94" x="118" y="148" />
       <path d="M132 170 l10 10 18-20" stroke="#002f87" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" />
       <rect fill="#ffffff" height="72" rx="16" stroke="#d5def0" strokeWidth="2" width="240" x="310" y="120" />
-      <text fill="#002f87" fontFamily="Figtree, sans-serif" fontSize="15" fontWeight="600" x="330" y="150">
+      <text fill="#002f87" fontFamily="Poppins, sans-serif" fontSize="15" fontWeight="600" x="330" y="150">
         Your results are ready
       </text>
-      <text fill="#4a5f8a" fontFamily="Noto Sans, sans-serif" fontSize="13" x="330" y="172">
+      <text fill="#4a5f8a" fontFamily="Poppins, sans-serif" fontSize="13" x="330" y="172">
         Secure link · we’ll call you
       </text>
       <rect fill="#ffffff" height="72" rx="16" stroke="#d5def0" strokeWidth="2" width="240" x="310" y="208" />
       <circle cx="346" cy="244" fill="#7d1690" r="16" />
-      <text fill="#002f87" fontFamily="Figtree, sans-serif" fontSize="14" fontWeight="600" x="374" y="240">
+      <text fill="#002f87" fontFamily="Poppins, sans-serif" fontSize="14" fontWeight="600" x="374" y="240">
         Medical team
       </text>
-      <text fill="#4a5f8a" fontFamily="Noto Sans, sans-serif" fontSize="12" x="374" y="258">
+      <text fill="#4a5f8a" fontFamily="Poppins, sans-serif" fontSize="12" x="374" y="258">
         Explains the report
       </text>
     </svg>
@@ -120,7 +120,7 @@ export function SceneNext({ title }: SceneProps) {
           <circle cx={door.x + 84} cy="180" fill={door.fill} opacity="0.2" r="32" />
           <text
             fill="#002f87"
-            fontFamily="Figtree, sans-serif"
+            fontFamily="Poppins, sans-serif"
             fontSize="16"
             fontWeight="600"
             textAnchor="middle"

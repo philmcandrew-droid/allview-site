@@ -1,0 +1,16 @@
+export const smokeRoutes = [
+  "/",
+  "/book",
+  "/book?path=vhi",
+  "/locations",
+  "/locations?city=cork&clinic=cork",
+  "/about",
+  "/contact",
+  "/process",
+  "/dermatology",
+  "/dermatology/process-vhi",
+  "/dermatology/gp-referral",
+  "/dermatology/skin",
+  "/dermatology/case-studies",
+  "/does-not-exist",
+];

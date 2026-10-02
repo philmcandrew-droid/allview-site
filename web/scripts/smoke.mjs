@@ -9,7 +9,22 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(here, "..");
 const PORT = 4173;
 const BASE = `http://127.0.0.1:${PORT}`;
-const ROUTES = ["/", "/book", "/book?path=vhi", "/locations", "/locations?city=cork&clinic=cork", "/about", "/contact", "/process", "/does-not-exist"];
+const ROUTES = [
+  "/",
+  "/book",
+  "/book?path=vhi",
+  "/locations",
+  "/locations?city=cork&clinic=cork",
+  "/about",
+  "/contact",
+  "/process",
+  "/dermatology",
+  "/dermatology/process-vhi",
+  "/dermatology/gp-referral",
+  "/dermatology/skin",
+  "/dermatology/case-studies",
+  "/does-not-exist",
+];
 const ASSETS = ["/brand/allview.svg", "/brand/vhi.svg", "/brand/hse.svg"];
 
 if (!existsSync(path.join(root, "dist", "index.html"))) {

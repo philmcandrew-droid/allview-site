@@ -130,7 +130,7 @@ export function ContactPage() {
       <section className="hero-mesh px-5 pb-16 pt-14 text-white sm:pt-20">
         <div className="mx-auto max-w-6xl">
           <p className="font-mono text-xs uppercase tracking-[0.22em] text-cyan">Contact</p>
-          <h1 className="mt-4 max-w-3xl font-display text-4xl leading-[1.05] font-black sm:text-6xl">
+          <h1 className="mt-4 max-w-3xl font-ui text-4xl leading-[1.05] font-semibold sm:text-6xl">
             Tell us who you are. We’ll pick up.
           </h1>
           <p className="mt-5 max-w-xl text-lg text-white/90">

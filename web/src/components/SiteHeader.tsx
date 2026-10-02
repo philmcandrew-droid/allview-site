@@ -1,9 +1,10 @@
 import { List, Phone } from "@phosphor-icons/react";
 import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
 const links = [
   { to: "/process", label: "How it works" },
+  { to: "/dermatology", label: "Dermatology" },
   { to: "/locations", label: "Clinics" },
   { to: "/contact", label: "Contact" },
   { to: "/about", label: "About" },
@@ -11,6 +12,7 @@ const links = [
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const location = useLocation();
 
   return (
     <header className="sticky top-0 z-40 bg-paper/95 shadow-sm backdrop-blur">
@@ -20,7 +22,7 @@ export function SiteHeader() {
       >
         Skip to main content
       </a>
-      <div className="flex flex-wrap items-center justify-center gap-x-6 bg-navy px-5 text-sm text-white">
+      <div className="flex flex-wrap items-center justify-center gap-x-6 bg-navy px-5 font-ui text-sm text-white">
         <a className="inline-flex min-h-11 items-center gap-2 text-white hover:text-cyan" href="tel:+35312248111">
           <Phone size={14} />
           <span>
@@ -43,9 +45,14 @@ export function SiteHeader() {
           {links.map((item) => (
             <NavLink
               key={item.to}
-              className={({ isActive }) =>
-                `inline-flex min-h-11 items-center font-ui text-sm font-medium transition-colors ${isActive ? "text-navy underline decoration-cyan decoration-2 underline-offset-8" : "text-muted hover:text-navy"}`
+              aria-current={
+                item.to === "/dermatology" && location.pathname.startsWith("/dermatology") ? "page" : undefined
               }
+              className={({ isActive }) => {
+                const onDerm = item.to === "/dermatology" && location.pathname.startsWith("/dermatology");
+                const current = isActive || onDerm;
+                return `inline-flex min-h-11 items-center font-ui text-sm font-medium transition-colors ${current ? "text-navy underline decoration-cyan decoration-2 underline-offset-8" : "text-muted hover:text-navy"}`;
+              }}
               to={item.to}
             >
               {item.label}
@@ -75,7 +82,14 @@ export function SiteHeader() {
           {links.map((item) => (
             <NavLink
               key={item.to}
-              className="flex min-h-11 items-center font-ui text-base text-navy"
+              aria-current={
+                item.to === "/dermatology" && location.pathname.startsWith("/dermatology") ? "page" : undefined
+              }
+              className={({ isActive }) => {
+                const onDerm = item.to === "/dermatology" && location.pathname.startsWith("/dermatology");
+                const current = isActive || onDerm;
+                return `flex min-h-11 items-center font-ui text-base ${current ? "font-semibold text-navy underline decoration-cyan decoration-2 underline-offset-4" : "text-navy"}`;
+              }}
               to={item.to}
               onClick={() => setOpen(false)}
             >

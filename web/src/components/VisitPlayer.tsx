@@ -224,7 +224,7 @@ export function VisitPlayer({ path }: VisitPlayerProps) {
                 }}
               >
                 {playing ? <Pause aria-hidden size={18} weight="fill" /> : <Play aria-hidden size={18} weight="fill" />}
-                {playing ? "Pause" : last ? "Replay visit" : "Play the visit"}
+                {playing ? "Pause" : last ? "Start again" : "Walk through the steps"}
               </button>
               <button
                 aria-label="Next step"
@@ -236,7 +236,7 @@ export function VisitPlayer({ path }: VisitPlayerProps) {
                 <CaretRight aria-hidden size={22} weight="bold" />
               </button>
             </div>
-            <p className="mt-3 hidden text-xs text-muted lg:block">Arrow keys move steps. Space plays or pauses.</p>
+            <p className="mt-3 hidden text-xs text-muted lg:block">Arrow keys move between steps. Space starts or pauses.</p>
           </div>
         </div>
       </div>

@@ -12,6 +12,8 @@ export type Clinic = {
   phone: string;
   phoneLabel: string;
   notes: string[];
+  /** Official clinic photograph from allview.ie, when the file is still published. */
+  photo?: string;
 };
 
 export const cities: City[] = ["Dublin", "Cork", "Galway", "Waterford"];
@@ -32,10 +34,12 @@ export const clinics: Clinic[] = [
     phone: MAIN_PHONE,
     phoneLabel: "01 224 8100",
     notes: [
-      "Head office and South Dublin clinic. Entrance is opposite the Vhi 360 Health Centre entrance.",
-      "Free parking in the retail park for 3 hours — park outside AIB or O’Brien’s Wines and walk to the front of the Hyde Building.",
-      "Bus 63 stops at The Park (stop 7360).",
+      "Head office and South Dublin clinic. Entrance is opposite the Vhi 360 Health Centre. Buzz 12, then go to the 1st floor.",
+      "Free parking in the retail park for 3 hours. Park outside AIB or O’Brien’s Wines and walk to the front of the Hyde Building.",
+      "Driving: M50 Exit 15 (Cornelscourt / Kilternan), along Glenamuck Road into Carrickmines retail park, then left at PowerCity.",
+      "Luas Green Line to Ballyogan Wood — about a 6 minute walk. Bus 63 stops at The Park (stop 7360).",
     ],
+    photo: "/clinics/carrickmines.jpg",
   },
   {
     id: "vhi-360",
@@ -48,7 +52,10 @@ export const clinics: Clinic[] = [
     lng: -6.1840848,
     phone: VHI_PHONE,
     phoneLabel: "01 224 8111",
-    notes: ["Dermatology clinic is on the 4th floor of the Vhi 360 Health Centre.", "Vhi members’ clinic."],
+    notes: [
+      "Dermatology clinic for Vhi members, on the 4th floor of the Vhi 360 Health Centre.",
+    ],
+    photo: "/clinics/vhi-360.jpg",
   },
   {
     id: "docklands",
@@ -61,7 +68,8 @@ export const clinics: Clinic[] = [
     lng: -6.2384595,
     phone: MAIN_PHONE,
     phoneLabel: "01 224 8100",
-    notes: ["Inside the Hanover Medical Centre, a short walk from the city centre."],
+    notes: ["Inside the Hanover Medical Centre, a short stroll from the city centre."],
+    photo: "/clinics/docklands.webp",
   },
   {
     id: "cork",
@@ -74,7 +82,7 @@ export const clinics: Clinic[] = [
     lng: -8.4673066,
     phone: MAIN_PHONE,
     phoneLabel: "01 224 8100",
-    notes: ["Inside the Langford Hall Consultants Clinic."],
+    notes: ["Inside Langford Hall Medical Centre, Langford Hall Consultants Clinic."],
   },
   {
     id: "galway",
@@ -88,6 +96,7 @@ export const clinics: Clinic[] = [
     phone: MAIN_PHONE,
     phoneLabel: "01 224 8100",
     notes: ["Inside The Consultant Suites, Harris House."],
+    photo: "/clinics/galway.jpg",
   },
   {
     id: "waterford",
@@ -101,6 +110,7 @@ export const clinics: Clinic[] = [
     phone: MAIN_PHONE,
     phoneLabel: "01 224 8100",
     notes: ["Inside the Waterford Medical Centre at Kilbarry Shopping Centre."],
+    photo: "/clinics/waterford.webp",
   },
 ];
 
