@@ -2,9 +2,8 @@ import { ArrowRight, FirstAid, Handshake, ShieldCheck, Timer } from "@phosphor-i
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { chapters, type ChapterId } from "../data/about";
+import { AfterScan } from "../components/AfterScan";
 import { AwardsGallery } from "../components/AwardsGallery";
-import { SectionGallery } from "../components/SectionGallery";
-import { sectionMedia } from "../data/section-media";
 
 const chapterIcons = {
   wait: Timer,
@@ -17,7 +16,6 @@ export function AboutPage() {
   const [chapterId, setChapterId] = useState<ChapterId>("wait");
   const chapter = chapters.find((item) => item.id === chapterId) ?? chapters[0];
   const ChapterIcon = chapterIcons[chapter.id];
-  const charts = sectionMedia["/about-us"] ?? [];
 
   return (
     <main id="main" tabIndex={-1} className="outline-none">
@@ -100,9 +98,7 @@ export function AboutPage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-5 pt-16">
-        {charts.map((block) => (
-          <SectionGallery block={block} key={block.title} />
-        ))}
+        <AfterScan />
       </section>
 
       <section className="mx-auto max-w-6xl px-5 py-16" aria-label="Key clients">

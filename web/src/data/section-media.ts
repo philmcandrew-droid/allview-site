@@ -5,32 +5,13 @@ export type MediaLayout = "stack" | "icons" | "photos";
 export type MediaBlock = {
   title: string;
   layout: MediaLayout;
+  /** Artwork drawn in white needs a navy field. */
+  surface?: "navy";
   items: MediaItem[];
-};
-
-const impactCharts: MediaBlock = {
-  title: "Waiting lists and what happens after a scan",
-  layout: "stack",
-  items: [
-    {
-      src: "/media/Dermatology-List-Prorgression-Sep-23.svg",
-      alt: "Dermatology waiting-list progression, September 2023",
-    },
-    {
-      src: "/media/Dermatology-Waiting-Lists-by-Hospitals-Sep-23.svg",
-      alt: "Dermatology waiting lists by hospital, September 2023",
-    },
-    {
-      src: "/media/Pathways-Following-Scan.svg",
-      alt: "Pathways following a scan",
-    },
-  ],
 };
 
 /** Pictures from the matching page on allview.ie. */
 export const sectionMedia: Record<string, MediaBlock[]> = {
-  "/about-us": [impactCharts],
-  "/about-us/impact": [impactCharts],
   "/about-us/our-team": [
     {
       title: "The team",
@@ -44,6 +25,7 @@ export const sectionMedia: Record<string, MediaBlock[]> = {
     {
       title: "Mission, vision and values",
       layout: "stack",
+      surface: "navy",
       items: [{ src: "/media/AllView-Mission-Vision-Values.svg", alt: "AllView mission, vision and values" }],
     },
   ],

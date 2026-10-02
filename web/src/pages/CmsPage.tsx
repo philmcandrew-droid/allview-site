@@ -1,6 +1,7 @@
 import { ArrowRight } from "@phosphor-icons/react";
 import { useMemo, type MouseEvent } from "react";
 import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
+import { AfterScan } from "../components/AfterScan";
 import { SectionGallery } from "../components/SectionGallery";
 import { cmsChildren, cmsPosts, findCmsItem, formatCmsDate } from "../data/cms";
 import { sectionMedia } from "../data/section-media";
@@ -53,7 +54,20 @@ export function CmsPage() {
       </section>
 
       <section className="mx-auto max-w-3xl px-5 py-12">
-        {item.html ? (
+        {item.path === "/about-us/impact" ? (
+          <div className="mb-12">
+            <AfterScan />
+          </div>
+        ) : null}
+
+        {item.html && item.path === "/about-us/impact" ? (
+          <details className="mt-4 rounded-2xl border border-line bg-paper p-5">
+            <summary className="flex min-h-12 cursor-pointer items-center font-ui text-sm font-semibold text-navy">
+              Read the hospital figures in full
+            </summary>
+            <div className="cms-prose mt-4" onClick={onContentClick} dangerouslySetInnerHTML={{ __html: item.html }} />
+          </details>
+        ) : item.html ? (
           <div className="cms-prose" onClick={onContentClick} dangerouslySetInnerHTML={{ __html: item.html }} />
         ) : null}
 

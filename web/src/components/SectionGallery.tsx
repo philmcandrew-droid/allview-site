@@ -18,7 +18,9 @@ export function SectionGallery({ block }: { block: MediaBlock }) {
             className={
               block.layout === "icons"
                 ? "flex h-28 items-center justify-center rounded-2xl border border-line bg-paper p-4"
-                : "overflow-hidden rounded-2xl border border-line bg-paper"
+                : block.surface === "navy"
+                  ? "overflow-hidden rounded-2xl bg-navy p-4"
+                  : "overflow-hidden rounded-2xl border border-line bg-paper"
             }
           >
             <img

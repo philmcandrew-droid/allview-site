@@ -1,41 +1,11 @@
 import { ArrowRight, Check, Quotes } from "@phosphor-icons/react";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useRef } from "react";
 import { Link } from "react-router-dom";
+import { HomeSteps } from "../components/HomeSteps";
 import { PatientsTreated } from "../components/PatientsTreated";
 import { dermStories } from "../data/dermatology";
 import { feeIncludes, memberships, packageIncludes, testimonials } from "../data/home-facts";
 
-gsap.registerPlugin(ScrollTrigger, useGSAP);
-
-const steps = [
-  { n: "1", title: "We call you", body: "Tell us your details. We book the nearest clinic.", icon: "/media/Schedule-Appointment-Icon.svg" },
-  { n: "2", title: "Nurse scan", body: "A registered nurse photographs the area in clinic.", icon: "/media/Telederm-Scan-Icon.svg" },
-  { n: "3", title: "Consultant", body: "An Irish consultant dermatologist makes the diagnosis.", icon: "/media/Prescription-Icon-1.svg" },
-  { n: "4", title: "Your result", body: "You and your GP get the plan, prescription, or next step.", icon: "/media/Raport-Icon.svg" },
-];
-
 export function HomePage() {
-  const pinRef = useRef<HTMLDivElement>(null);
-
-  useGSAP(
-    () => {
-      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      if (reduce || !pinRef.current) return;
-      gsap.from(pinRef.current.querySelectorAll(".step-card"), {
-        opacity: 0,
-        y: 20,
-        duration: 0.45,
-        stagger: 0.08,
-        ease: "power2.out",
-        scrollTrigger: { trigger: pinRef.current, start: "top 80%" },
-      });
-    },
-    { scope: pinRef },
-  );
-
   return (
     <main id="main" tabIndex={-1} className="outline-none">
       <section className="hero-mesh px-5 pb-28 pt-16 text-white">
@@ -156,31 +126,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="bg-sky px-5 py-16" id="process" ref={pinRef}>
-        <div className="mx-auto max-w-6xl">
-          <h2 className="font-display text-4xl text-navy">Four simple steps</h2>
-          <div className="mt-8 grid gap-4 md:grid-cols-4">
-            {steps.map((step) => (
-              <article className="step-card tile" key={step.n}>
-                <img alt="" className="h-12 w-12" src={step.icon} />
-                <p className="mt-3 font-mono text-cyan">{step.n}</p>
-                <h3 className="mt-3 font-ui text-lg font-semibold">{step.title}</h3>
-                <p className="mt-2 text-sm text-muted">{step.body}</p>
-              </article>
-            ))}
-          </div>
-          <p className="mt-6 max-w-3xl text-sm text-muted">
-            Results may include a prescription and a further plan, such as a face-to-face appointment with the
-            consultant, or surgery.
-          </p>
-          <Link
-            className="mt-6 inline-flex min-h-12 items-center gap-2 rounded-full bg-navy px-6 font-ui font-semibold text-white transition-colors hover:bg-navy-deep"
-            to="/process"
-          >
-            See how it works in detail <ArrowRight aria-hidden size={18} />
-          </Link>
-        </div>
-      </section>
+      <HomeSteps />
 
       <section className="mx-auto max-w-6xl px-5 py-16" aria-labelledby="membership-heading">
         <h2 className="font-display text-4xl text-navy" id="membership-heading">
