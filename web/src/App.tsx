@@ -14,9 +14,12 @@ import { DermTopicPage } from "./pages/dermatology/DermTopicPage";
 import { ProcessPage } from "./pages/ProcessPage";
 import { SiteMapPage } from "./pages/SiteMapPage";
 
+const baseUrl = import.meta.env.BASE_URL;
+const basename = baseUrl === "/" ? undefined : baseUrl.replace(/\/$/, "");
+
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <Routes>
         <Route element={<Layout />} path="/">
           <Route element={<HomePage />} index />
